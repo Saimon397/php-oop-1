@@ -1,7 +1,39 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
-include './models/db.php';
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700;1,800&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>php-oop-1</title>
+</head>
 
-foreach ($movies as $movie) {
-    echo $movie->getInfo() . "<br>";
-}
+<body>
+
+    <header>
+        <h1>Movie List:</h1>
+    </header>
+    <main>
+        <?php
+
+        include './models/db.php';
+
+        echo "<ul>";
+
+        foreach ($movies as $movie) {
+            // Stampa di ogni film come elemento di lista
+            echo "<li>" . $movie->getInfo() . "</li>";
+        }
+
+        // Fine della lista
+        echo "</ul>";
+        ?>
+    </main>
+
+</body>
+
+</html>
